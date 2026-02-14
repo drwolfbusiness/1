@@ -1,0 +1,33 @@
+{
+  "name": "mcstudio-1201",
+  "version": "1.0.0",
+  "description": "Desktop visual development environment for Minecraft 1.20.1 content",
+  "main": "src/main/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "electron .",
+    "lint": "node scripts/lint.js",
+    "test": "node scripts/test.js",
+    "package": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "keywords": ["minecraft", "electron", "forge", "fabric", "datapack"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.local.mcstudio1201",
+    "productName": "MC Studio 1.20.1",
+    "files": [
+      "src/**/*",
+      "docs/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    }
+  }
+}
