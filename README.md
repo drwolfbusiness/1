@@ -47,18 +47,67 @@ scripts/
   test.js
 ```
 
-## Run
+## Quick Start (EN)
 
+### 1) Requirements
+- Node.js 18+
+- npm 9+
+- `zip` CLI available in PATH (used by export pipeline)
+
+### 2) Install dependencies
 ```bash
 npm install
+```
+
+### 3) Run desktop app
+```bash
 npm start
 ```
 
-## Build desktop binaries
+### 4) Run checks
+```bash
+npm run lint
+npm test
+```
 
+### 5) Build desktop binaries
 ```bash
 npm run dist
 ```
+
+## ازاي اجرب المشروع؟ (AR)
+
+### 1) المتطلبات
+- Node.js إصدار 18 أو أعلى.
+- npm إصدار 9 أو أعلى.
+- أمر `zip` يكون متاح على الجهاز.
+
+### 2) تثبيت الحزم
+```bash
+npm install
+```
+
+### 3) تشغيل البرنامج كـ Desktop App
+```bash
+npm start
+```
+
+### 4) اختبار سريع قبل التشغيل الكامل
+لو عندك مشكلة في تحميل الحزم من npm، تقدر تتأكد إن المنطق الأساسي شغال بالأوامر دي:
+```bash
+node scripts/lint.js
+node scripts/test.js
+```
+
+### 5) تجربة الواجهة فقط (بدون Electron)
+ده مفيد لو عايز تشوف الـ UI بسرعة:
+```bash
+python3 -m http.server 4173 --directory src/renderer
+```
+وبعدين افتح:
+`http://127.0.0.1:4173/index.html`
+
+> ملاحظة: في وضع المتصفح العادي، وظائف Electron IPC مش هتشتغل لأن `window.mcStudioApi` متوفرة فقط داخل Electron.
 
 ## Integrity checks
 - Validation enforces namespace format, loader values, and Minecraft target version.
