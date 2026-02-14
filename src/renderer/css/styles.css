@@ -1,0 +1,79 @@
+:root {
+  --bg: #1e1f22;
+  --bg-alt: #26282e;
+  --line: #3a3e47;
+  --text: #d2d6dc;
+  --accent: #5fa8ff;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar, .statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--line);
+  background: #181a1f;
+}
+
+.statusbar { border-top: 1px solid var(--line); border-bottom: 0; font-size: 0.9rem; }
+.actions button, input, select, textarea {
+  background: var(--bg-alt);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+button { cursor: pointer; }
+button:hover { border-color: var(--accent); }
+
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 260px 1fr 320px;
+  overflow: hidden;
+}
+.sidebar, .inspector {
+  border-right: 1px solid var(--line);
+  padding: 10px;
+  overflow: auto;
+}
+.inspector { border-right: 0; border-left: 1px solid var(--line); }
+.workspace {
+  display: grid;
+  grid-template-rows: 1fr 300px;
+  gap: 8px;
+  padding: 8px;
+}
+.pane {
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+  overflow: auto;
+}
+.module-item {
+  padding: 6px;
+  margin: 4px 0;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+.module-item:hover { border-color: var(--accent); }
+#previewCanvas { width: 100%; height: 220px; display: block; }
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+label { font-size: 0.82rem; color: #b0b7c3; }
+textarea { min-height: 72px; }

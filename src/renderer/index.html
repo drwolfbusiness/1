@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MC Studio 1.20.1</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>MC Studio 1.20.1</h1>
+    <div class="actions">
+      <button id="newProjectBtn">New Project</button>
+      <button id="saveProjectBtn">Save</button>
+      <button id="validateBtn">Validate</button>
+      <button id="exportBtn">Export All</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <aside class="sidebar">
+      <input id="assetSearch" placeholder="Search assets and modules..." />
+      <nav id="moduleNav"></nav>
+    </aside>
+
+    <section class="workspace">
+      <div class="pane" id="canvasPane">
+        <h2>Workspace Canvas</h2>
+        <div id="editorHost"></div>
+      </div>
+      <div class="pane" id="previewPane">
+        <h2>3D Preview</h2>
+        <canvas id="previewCanvas"></canvas>
+      </div>
+    </section>
+
+    <aside class="inspector pane">
+      <h2>Inspector</h2>
+      <pre id="inspectorOutput"></pre>
+      <h2>Command Palette</h2>
+      <input id="commandInput" placeholder="Type command: export, validate, plugins" />
+      <div id="commandOutput"></div>
+    </aside>
+  </main>
+
+  <footer class="statusbar" id="statusBar">Ready.</footer>
+  <script src="./js/renderer.js"></script>
+</body>
+</html>
